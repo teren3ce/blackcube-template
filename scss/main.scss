@@ -164,6 +164,8 @@ body {
         a {
           position: relative;
           overflow: visible;
+          text-transform: capitalize;
+          font-weight: 100;
           &:before {
             content: "Service Provider";
             position: absolute;
@@ -186,6 +188,7 @@ body {
           i {
             font-size: 1.8em;
             display: none;
+            color: $primary;
           }
         }
       }
