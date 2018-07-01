@@ -56,6 +56,14 @@ body {
     img {
       height: 45px;
     }
+    @media screen and (max-width: 480px) {
+      top: 50px;
+      text-align: center;
+      z-index: 5;
+      img {
+        height: 35px;
+      }
+    }
   }
   &.home {
     position: absolute;
@@ -178,24 +186,23 @@ body {
           i {
             font-size: 1.8em;
             display: none;
-            &:last-child {
-              display: inline-block;
-            }
           }
         }
       }
-      .service-section.active {
-        .action-nav a {
-          &::before {
-            content: "Professional";
-          }
+      .service-section.active~.action-nav a {
+        &::before {
+          content: "Professional";
+        }
+        i.pro {
+          display: inline-block;
         }
       }
-      .pro-section.active {
-        .action-nav a {
-          &::before {
-            content: "Service provider";
-          }
+      .pro-section.active~.action-nav a {
+        &::before {
+          content: "Service provider";
+        }
+        i.service {
+          display: inline-block;
         }
       }
     }
@@ -203,6 +210,7 @@ body {
       .pro-section,
       .service-section {
         width: 15px;
+        min-height: 100vh;
         &.active {
           width: calc(100% - 15px);
         }
@@ -247,6 +255,10 @@ body {
           color: #fff;
           opacity: .8;
           font-weight: bold;
+        }
+        >label {
+          top: auto;
+          bottom: 25px;
         }
         input {
           border-color: #fff;
@@ -356,6 +368,10 @@ body {
           opacity: .8;
           font-weight: bold;
         }
+        >label {
+          top: auto;
+          bottom: 25px;
+        }
         input {
           border-color: $dark;
           color: $dark;
@@ -432,6 +448,5 @@ body {
       color: #fff;
       margin-bottom: 4em;
     }
-    
   }
 }
