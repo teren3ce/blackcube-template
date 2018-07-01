@@ -166,13 +166,15 @@ body {
           overflow: visible;
           text-transform: capitalize;
           font-weight: 100;
+          font-size: 10px;
+          line-height: 1;
           &:before {
-            content: "Service Provider";
+            content: "You are a Service Provider";
             position: absolute;
             left: -200px;
             background: $dark;
             top: 8px;
-            padding: 12px 15px;
+            padding: 10px 15px;
             width: 180px;
           }
           &:after {
@@ -182,7 +184,7 @@ body {
             background: $dark;
             transform: rotate(45deg);
             position: absolute;
-            top: 20px;
+            top: 16px;
             left: -30px;
           }
           i {
@@ -194,7 +196,7 @@ body {
       }
       .service-section.active~.action-nav a {
         &::before {
-          content: "Professional";
+          content: "You are a Professional";
         }
         i.pro {
           display: inline-block;
@@ -202,7 +204,7 @@ body {
       }
       .pro-section.active~.action-nav a {
         &::before {
-          content: "Service provider";
+          content: "You are a Service Provider";
         }
         i.service {
           display: inline-block;
@@ -216,6 +218,11 @@ body {
         min-height: 100vh;
         &.active {
           width: calc(100% - 15px);
+        }
+        .info {
+          h1 {
+            font-size: 28px;
+          }
         }
       }
       .action-nav {
