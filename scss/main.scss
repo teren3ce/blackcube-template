@@ -1,6 +1,7 @@
 //@import "../../node_modules/materialize-css/sass/materialize.scss";
 $primary: #BE0000;
 $dark: #0A0A0A;
+$accent: #D80365;
 body {
   font-family: Muli;
 }
@@ -17,6 +18,15 @@ body {
   &:hover,
   &:focus {
     background: transparent;
+  }
+  &.dark {
+    color: $dark;
+    border: 1px solid $dark;
+    &:hover,
+    &:focus {
+      color: $primary;
+      border: 1px solid $primary;
+    }
   }
 }
 
@@ -36,6 +46,17 @@ body {
 }
 
 .page {
+  .brand {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 5;
+    img {
+      height: 45px;
+    }
+  }
   &.home {
     position: absolute;
     height: 100vh;
@@ -56,6 +77,7 @@ body {
       padding: 2em 5em;
       overflow: hidden;
       overflow-y: auto;
+      background-size: cover;
       .info {
         max-width: 75%;
         h1,
@@ -82,6 +104,8 @@ body {
       right: 0;
       justify-content: flex-start;
       text-align: left;
+      background-size: cover;
+      background-position: center;
       &:before {
         content: "";
         position: absolute;
@@ -94,17 +118,6 @@ body {
     }
     .action-nav {
       display: none;
-    }
-    .brand {
-      position: absolute;
-      top: 80px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      z-index: 5;
-      img {
-        height: 45px;
-      }
     }
     @media screen and (max-width: 1024px) {
       .pro-section,
@@ -198,5 +211,227 @@ body {
         bottom: 35px;
       }
     }
+  }
+  .page-form {
+    .header {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 8em;
+      padding-top: 10em;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgb(190, 0, 0);
+        background: linear-gradient(180deg, rgba(190, 0, 0, 1) 0%, rgba(190, 0, 0, 1) 19%, rgba(190, 0, 0, 0.3575805322128851) 100%);
+      }
+      .title {
+        position: relative;
+        z-index: 5;
+        color: #fff;
+        margin-bottom: 3em;
+        h2 {
+          font-size: 32px;
+          font-weight: bolder;
+        }
+        p {
+          font-weight: 200;
+        }
+      }
+      .input-field {
+        label {
+          color: #fff;
+          opacity: .8;
+          font-weight: bold;
+        }
+        input {
+          border-color: #fff;
+          color: #fff;
+        }
+        input:focus {
+          border-color: #fff;
+          box-shadow: 0 1px 0 0 #fff;
+        }
+        input:focus+label {
+          color: #fff;
+          opacity: 1;
+        }
+      }
+    }
+    .body {
+      position: relative;
+      z-index: 10;
+      margin-top: -100px;
+      .input-video {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 320px;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 1px 6px rgba($dark, .2);
+        margin-bottom: 3em;
+        cursor: pointer;
+        .content {
+          text-align: center;
+          padding: 0 1em;
+          i {
+            font-size: 8em;
+            color: rgba($primary, .3);
+            display: block;
+          }
+        }
+        .thumbnail {
+          visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-size: cover;
+          background-position: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .4);
+          }
+          i {
+            font-size: 4em;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+          }
+          .remove-vid {
+            position: absolute;
+            right: -15px;
+            box-shadow: none;
+            background-color: $accent;
+            overflow: visible;
+            i {
+              font-size: 1.5em;
+            }
+            &:before {
+              content: "Remove";
+              position: absolute;
+              background: $dark;
+              left: -105px;
+              top: -2px;
+              padding: 2px 15px;
+              width: 85px;
+            }
+            &:after {
+              content: "";
+              width: 15px;
+              height: 15px;
+              background: $dark;
+              transform: rotate(45deg);
+              position: absolute;
+              top: 8px;
+              left: -30px;
+            }
+          }
+        }
+        &.uploaded {
+          .thumbnail {
+            visibility: visible;
+          }
+        }
+      }
+      .input-field {
+        margin-bottom: 2em;
+        label {
+          color: $dark;
+          opacity: .8;
+          font-weight: bold;
+        }
+        input {
+          border-color: $dark;
+          color: $dark;
+        }
+        input:focus {
+          border-color: $primary;
+          box-shadow: 0 1px 0 0 $primary;
+        }
+        input:focus+label {
+          color: $primary;
+          opacity: 1;
+        }
+      }
+      .input-beta {
+        label {
+          color: $dark;
+          font-size: 1rem;
+        }
+        .choice {
+          margin-top: 1.5em;
+          label {
+            font-size: 1.5rem;
+            color: rgba($dark, .6);
+            .with-gap:checked+span {
+              &:after {
+                background-color: $primary;
+                border-color: $primary;
+              }
+              &:before {
+                border-color: $primary;
+              }
+            }
+          }
+        }
+      }
+    }
+    .footer {
+      padding: 3em 0;
+      margin-bottom: 5em;
+    }
+    @media screen and (max-width: 768px) {
+      .header,
+      .body,
+      .footer {
+        padding-left: 1.5em;
+        padding-right: 1.5em;
+        .input-video {
+          height: 250px;
+        }
+      }
+    }
+  }
+}
+
+.dark-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, .4);
+  .success {
+    text-align: center;
+    h1 {
+      font-size: 65px;
+      color: #fff;
+      font-weight: bolder;
+    }
+    p {
+      color: #fff;
+      margin-bottom: 4em;
+    }
+    
   }
 }
