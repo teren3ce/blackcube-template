@@ -1,4 +1,5 @@
 $(function () {
+
     $(".action-nav a").click(function (e) {
         e.preventDefault();
         if ($(".pro-section").hasClass("active")) {
@@ -20,6 +21,7 @@ $(function () {
         $(".input-video").removeClass("uploaded");
     })
 
+    $(".dark-modal").hide();
     $(".dark-modal .close-modal").click(function () {
         $(".dark-modal").fadeOut();
     })
