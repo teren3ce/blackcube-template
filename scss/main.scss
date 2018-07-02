@@ -124,7 +124,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, .4);
+        background: rgba(0, 0, 0, .7);
       }
     }
     .action-nav {
@@ -248,7 +248,7 @@ body {
         right: 0;
         bottom: 0;
         background: rgb(190, 0, 0);
-        background: linear-gradient(180deg, rgba(190, 0, 0, 1) 0%, rgba(190, 0, 0, 1) 19%, rgba(190, 0, 0, 0.3575805322128851) 100%);
+        background: linear-gradient(180deg, $primary 0%, $primary 19%, rgba($primary, 0.345) 100%);
       }
       .title {
         position: relative;
