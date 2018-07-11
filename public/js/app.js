@@ -11,10 +11,12 @@ $(function () {
         }
     })
 
-    $(".input-video .content").click(function (e) {
-        e.preventDefault();
-        $(".input-video").addClass("uploaded");
-    })
+    // $(".input-video .content").click(function (e) {
+    //     e.preventDefault();
+    //     $(".input-video").addClass("uploaded");
+    // })
+
+
 
     $(".input-video .thumbnail .remove-vid").click(function (e) {
         e.preventDefault();
@@ -28,6 +30,15 @@ $(function () {
 
     $(".page-form").submit(function (e) {
         e.preventDefault();
-        $(".dark-modal").fadeIn();
+        var form = $(this).serialize();
+
+        console.log(form);
+        $.post("/professional_answers/new", form).then(function (e) {
+            $(".dark-modal").fadeIn();
+        }).catch(function (e) {
+            M.toast({
+                html: 'Unable to submit your survey, please try again'
+            })
+        })
     })
 });

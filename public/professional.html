@@ -38,11 +38,11 @@
                             <p>Fill the information below</p>
                         </div>
                         <div class="input-field">
-                            <input id="name" type="text" class="validate">
+                            <input name="name" type="text" class="validate" required>
                             <label for="name">Your Name</label>
                         </div>
                         <div class="input-field">
-                            <input id="email" type="text" class="validate">
+                            <input name="email" type="text" class="validate" required>
                             <label for="email">Your Email Address</label>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="col s12 m6 offset-m3">
                         <div class="input-video">
                             <video src="" hidden controls></video>
-                            <input type="file" hidden />
+                            <input name="video" accept="video/mp4" type="file" hidden />
                             <div class="content">
                                 <i class="material-icons">videocam</i>
                                 <label>Click to upload a video presentation of yourself</label>
@@ -66,23 +66,23 @@
                             </div>
                         </div>
                         <div class="input-field">
-                            <input id="app" type="text" class="validate">
+                            <input name="app" type="text" class="validate" required>
                             <label for="app">What do you think about this app?</label>
                         </div>
                         <div class="input-field">
-                            <input id="addition" type="text" class="validate">
+                            <input name="addition" type="text" class="validate" required>
                             <label for="addition">Is there anything else you will like to be added?</label>
                         </div>
                         <div class="input-beta">
                             <label>Are you willing to participate in beta testing?</label>
                             <div class="choice">
                                 <label>
-                                    <input class="with-gap" name="group3" type="radio" checked />
+                                    <input class="with-gap" name="beta" type="radio" value="no" checked />
                                     <span>NO</span>
                                 </label>
 
                                 <label>
-                                    <input class="with-gap" name="group3" type="radio" checked />
+                                    <input class="with-gap" name="beta" type="radio" value="yes" checked />
                                     <span>YES</span>
                                 </label>
                             </div>
